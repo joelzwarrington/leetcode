@@ -1,0 +1,4 @@
+require_relative "../../../problems/<%= number %>/solution.rb"
+
+RSpec.describe "Problem <%= number %>" do
+end
