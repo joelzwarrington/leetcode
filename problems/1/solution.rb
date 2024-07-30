@@ -2,13 +2,13 @@
 # @param {Integer} target
 # @return {Integer[]}
 def two_sum(nums, target)
-  nums.each_with_index do |a, i|
-    break if a > target
+  nums_by_index = {}
 
-    offset = i + 1
+  nums.each_with_index do |num, index|
+    other_index = nums_by_index[target - num]
 
-    nums[offset..].each_with_index do |b, j|
-      return [i, offset + j] if a + b == target
-    end
+    return [other_index, index] if other_index
+
+    nums_by_index[num] = index
   end
 end
